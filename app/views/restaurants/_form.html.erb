@@ -1,0 +1,63 @@
+<%= form_for @resto do |f| %>
+
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :description %>
+  <br>
+  <%= f.text_field :description %>
+  <br>
+
+  <%= f.label :contact %>
+  <br>
+  <%= f.text_field :contact %>
+  <br>
+
+  <%= f.label :email %>
+  <br>
+  <%= f.text_field :email %>
+  <br>
+
+  <%= f.label :website %>
+  <br>
+  <%= f.text_field :website %>
+  <br>
+
+  <%= f.label :address %>
+  <br>
+  <%= f.text_field :address %>
+  <br>
+
+  <%= f.label :price %>
+  <br>
+  <%= f.select :price, Restaurant.prices.keys.to_a %>
+  <br>
+
+  <%= f.label :cuisine %>
+  <br>
+  <%= f.text_field :cuisine %>
+  <br>
+
+  <%= f.label :eatin %>
+  <br>
+  <%= f.select :eatin, Restaurant.eatins.keys.to_a %>
+  <br>
+
+  <%= f.label :takeout %>
+  <br>
+  <%= f.select :takeout, Restaurant.takeouts.keys.to_a %>
+  <br>
+
+  <%= f.label :image %>
+  <br>
+  <%= f.text_field :image %>
+  <br>
+
+
+  <% end %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,2 +1,17 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1> <%= @resto.name %> </h1>
+
+<%= link_to 'Edit Account', edit_restaurant_path(@resto.id) %>
+|
+<%= link_to 'Delete Account', restaurant_path(@resto.id), method: 'delete' %>
+
+<p><strong>Restaurant Name</strong>: <%= @resto.name %></p>
+<p><strong>Description</strong>: <%= @resto.description %></p>
+<p><strong>Contact Number</strong>: <%= @resto.contact %></p>
+<p><strong>Email Address</strong>: <%= @resto.email %></p>
+<p><strong>Website</strong>: <%= @resto.website %></p>
+<p><strong>Address</strong>: <%= @resto.address %></p>
+<p><strong>Price</strong>: <%= @resto.price %></p>
+<p><strong>Cuisine</strong>: <%= @resto.cuisine %></p>
+<p><strong>Eat-in</strong>: <%= @resto.eatin %></p>
+<p><strong>Eat-out</strong>: <%= @resto.eatout %></p>
+<img src=<%= @resto.image %> alt=<%= @resto.name %>>

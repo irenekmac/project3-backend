@@ -1,2 +1,13 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h2>
+Companies
+</h2>
+
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <!-- loop lists all the users and gives ea user a link, when clicked it
+    sends you to the show page that lists the users' db info -->
+    <%= link_to user.name, user_path(user.id) %>
+  </li>
+  <% end %>
+</ul>

@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
   def new
-    @resto = Order.new
+    @resto = Restaurant.new
   end
 
   def create
@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @resto = Order.all
+    @resto = Restaurant.all
   end
 
   def show
@@ -17,9 +17,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    # Only admin and technician can edit orders
     @resto = Restaurant.find params[:id]
-    # check_ownership
   end
 
   def update
@@ -28,9 +26,8 @@ class RestaurantsController < ApplicationController
 
     # Do update here
     redirect_to restaurants_path
-    # and return unless @order.patient == @current_user
 
-    puts "~~~~~~~~~~~~~~~~ ORDER UPDATED ~~~~~~~~~~~~~~~~"
+    puts "~~~~~~~~~~~~~~~~ UPDATED ~~~~~~~~~~~~~~~~"
   end
 
   def destroy
