@@ -6,4 +6,12 @@ class Restaurant < ApplicationRecord
   enum eatin: [:recommended, :veto]
 
   enum eatout: [:go, :pass]
+
+  # Get random Restaurant
+  # def rand_rest
+  #
+  #
+  #
+  # end
+
 end
