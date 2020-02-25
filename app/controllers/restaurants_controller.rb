@@ -51,10 +51,10 @@ class RestaurantsController < ApplicationController
 
     # Get the user restaurant
     # @user_rest = User.first.restaurants.order('RANDOM()').first
-    @u = @current_user
+    @present_user = @current_user
 
-    if @u
-      return @resto = @u.restaurants.order('RANDOM()').first
+    if @present_user
+      return @resto = @present_user.restaurants.order('RANDOM()').first
     else
       return @resto = Restaurant.order('RANDOM()').first
     end
