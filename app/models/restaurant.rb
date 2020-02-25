@@ -5,5 +5,5 @@ class Restaurant < ApplicationRecord
 
   enum eatin: [:recommended, :veto]
 
-  enum takeout: [:go, :pass]
+  enum eatout: [:go, :pass]
 end

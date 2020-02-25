@@ -10,7 +10,7 @@ Restaurant.destroy_all
 
 # enum price: [:cheap, :affordable, :pricey, :expensive]
 # enum eatin: [:recommended, :veto]
-# enum takeout: [:go, :pass]
+# enum eatout: [:go, :pass]
 
 r1 = Restaurant.create! name:'El Loco', description:'modern twist of mexican food', contact:'(02) 9114 7339', email:'el-loco@test.com', website:'https://merivale.com/venues/excelsior/?utm_source=googlemybusiness_venue&utm_medium=organic&utm_campaign=googlemybusiness_venue_organic_ellocoatexcelsior&utm_content=website', address:'64 Foveaux St, Surry Hills NSW 2010', price:'pricey', cuisine:'Mexican', eatout:'pass', eatin:'recommended',
 image:'https://assets.atdw-online.com.au/images/292796299602f9d7a5b8ed6908764b74.jpeg?rect=476,0,2048,1536&w=745&h=559&&rot=360', user_id:u1.id

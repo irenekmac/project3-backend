@@ -9,7 +9,10 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @resto = Restaurant.all
+    # @resto = Restaurant.all
+
+    # Current logged-in user can see team suggested orders
+    @resto = Restaurant.where user_id: @current_user.id
   end
 
   def show
@@ -34,6 +37,16 @@ class RestaurantsController < ApplicationController
     Restaurant.destroy params[:id]
 
     redirect_to restaurants_path
+  end
+
+  # 1. root route gets sent to custom method in this controller
+  # 2. Write custom method for anything you might need in this page
+  # 3. Gets send to the view
+  # 4. View displays the homepage & any links e.c.t.
+  # get'/' => 'restaurants#homepage'
+  def homepage
+    # renders a random restaurant from the users' database
+    @resto = Restaurant.order('RANDOM()').first
   end
 
   private

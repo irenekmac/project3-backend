@@ -4,10 +4,6 @@
 |
 <%= link_to 'Delete Account', restaurant_path(@resto.id), method: 'delete' %>
 
-
-<div class="container"
-
-end>
 <p><strong>Restaurant Name</strong>: <%= @resto.name %></p>
 <p><strong>Description</strong>: <%= @resto.description %></p>
 <p><strong>Contact Number</strong>: <%= @resto.contact %></p>
@@ -18,4 +14,3 @@ end>
 <p><strong>Eat-in</strong>: <%= @resto.eatin %></p>
 <p><strong>Eat-out</strong>: <%= @resto.eatout %></p>
 <img src=<%= @resto.image %> alt=<%= @resto.name %>>
-</div>

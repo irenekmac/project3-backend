@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # root :to => 'session#new'
+  root :to => 'restaurants#homepage'
 
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' #form submit, check credentials, create session

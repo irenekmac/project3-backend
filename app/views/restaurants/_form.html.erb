@@ -45,9 +45,9 @@
   <%= f.select :eatin, Restaurant.eatins.keys.to_a %>
   <br>
 
-  <%= f.label :takeout %>
+  <%= f.label :eatout %>
   <br>
-  <%= f.select :takeout, Restaurant.takeouts.keys.to_a %>
+  <%= f.select :eatout, Restaurant.eatouts.keys.to_a %>
   <br>
 
   <%= f.label :image %>
@@ -55,9 +55,6 @@
   <%= f.text_field :image %>
   <br>
 
+  <%= f.submit 'Submit' %>
 
   <% end %>
-
-  <%= f.submit %>
-
-<% end %>
