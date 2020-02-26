@@ -6,9 +6,20 @@ class RestaurantsController < ApplicationController
 
   def create
     @current_user.submitted_restaurants.create order_params
+
+    respond_to do |format|
+      if @current_user.save
+        format.html { redirect_to @current_user, notice: 'Restaurant was successfully created.' }
+        format.json { render :show, status: :created, location: @current_user }
+      else
+        format.html { render :new }
+        format.json { render json: @current_user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def index
+    headers['Access-Control-Allow-Origin'] = '*'
     # @resto = Restaurant.all
 
     # Current logged-in user can see team suggested orders
@@ -17,6 +28,8 @@ class RestaurantsController < ApplicationController
 
   def show
     @resto = Restaurant.find params[:id]
+
+    render json: @resto
   end
 
   def edit
@@ -27,6 +40,16 @@ class RestaurantsController < ApplicationController
     @resto = Restaurant.find params[:id]
     @resto.update resto_params
 
+    respond_to do |format|
+      if @resto.update(resto_params)
+        format.html { redirect_to @resto, notice: 'Restaurant was successfully updated.' }
+        format.json { render :show, status: :ok, location: @resto }
+      else
+        format.html { render :edit }
+        format.json { render json: @resto.errors, status: :unprocessable_entity }
+      end
+    end
+
     # Do update here
     redirect_to restaurants_path
 
@@ -35,6 +58,11 @@ class RestaurantsController < ApplicationController
 
   def destroy
     Restaurant.destroy params[:id]
+
+    respond_to do |format|
+      format.html { redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.' }
+      format.json { head :no_content }
+    end
 
     redirect_to restaurants_path
   end
@@ -59,16 +87,28 @@ class RestaurantsController < ApplicationController
       return @resto = Restaurant.order('RANDOM()').first
     end
 
+  end
+
+  def action
+    # call
+    respond_to do |format|
+      format.json { render json: results }
+    end
 
   end
 
   private
 
-  def resto_params
-    params.require(:restaurant).permit( :name, :address, :price, :cuisine, :eatin, :eatout )
-  end
+    def resto_params
+      params.require(:restaurant).permit( :name, :address, :price, :cuisine, :eatin, :eatout )
+    end
 
-  def check_ownership
-    redirect_to login_path and return unless @resto.user == @current_user
+    def allow_cors
+        headers['Access-Control-Allow-Origin'] = '*'
+      end
+
+    def check_ownership
+      redirect_to login_path and return unless @resto.user == @current_user
+    end
+
   end
-end
