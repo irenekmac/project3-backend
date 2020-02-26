@@ -33,7 +33,7 @@
 
   <%= f.label :price %>
   <br>
-  <%= f.select :price, Restaurant.prices.keys.to_a, :class => "custom-select" %>
+  <%= f.select :price, Restaurant.prices_options, :class => "custom-select" %>
   <br>
 
   <%= f.label :cuisine %>
