@@ -2,34 +2,34 @@
 
 <%= f.label :name %>
 <br>
-<%= f.text_field :name, placeholder: "Company Name" %>
+<%= f.text_field :name, placeholder: "Company Name", :class => "form-control mb-4" %>
 <br>
 
 <%= f.label :email %>
 <br>
-<%= f.text_field :email, placeholder: "admin@company.co" %>
+<%= f.text_field :email, placeholder: "admin@company.co", :class => "form-control mb-4" %>
 <br>
 
 <%= f.label :contact_number %>
 <br>
-<%= f.text_field :contact, placeholder: "(02) 9999 9999" %>
+<%= f.text_field :contact, placeholder: "(02) 9999 9999", :class => "form-control mb-4" %>
 <br>
 
 <%= f.label :address %>
 <br>
-<%= f.text_field :address, placeholder: "123, Oxford St, Sydney, NSW, 2000" %>
+<%= f.text_field :address, placeholder: "123, Oxford St, Sydney, NSW, 2000", :class => "form-control mb-4" %>
 <br>
 
 <%= f.label :password %>
 <br>
-<%= f.password_field :password %>
+<%= f.password_field :password, :class => "form-control mb-4" %>
 <br>
 
 <%= f.label :password_confirmation %>
 <br>
-<%= f.password_field :password_confirmation %>
+<%= f.password_field :password_confirmation, :class => "form-control mb-4" %>
 <br>
 
-<%= f.submit 'Submit' %>
+<%= f.submit 'Submit', :class => "btn btn-info btn-block my-4" %>
 
 <% end %>

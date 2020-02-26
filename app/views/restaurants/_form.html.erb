@@ -1,60 +1,61 @@
+
 <%= form_for @resto do |f| %>
 
   <%= f.label :name %>
   <br>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :description %>
   <br>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :contact %>
   <br>
-  <%= f.text_field :contact %>
+  <%= f.text_field :contact, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :email %>
   <br>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :website %>
   <br>
-  <%= f.text_field :website %>
+  <%= f.text_field :website, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :address %>
   <br>
-  <%= f.text_field :address %>
+  <%= f.text_field :address, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :price %>
   <br>
-  <%= f.select :price, Restaurant.prices.keys.to_a %>
+  <%= f.select :price, Restaurant.prices.keys.to_a, :class => "custom-select" %>
   <br>
 
   <%= f.label :cuisine %>
   <br>
-  <%= f.text_field :cuisine %>
+  <%= f.text_field :cuisine, :class => "form-control mb-4"  %>
   <br>
 
   <%= f.label :eatin %>
   <br>
-  <%= f.select :eatin, Restaurant.eatins.keys.to_a %>
+  <%= f.select :eatin, Restaurant.eatins.keys.to_a, :class => "dropdown-toggle" %>
   <br>
 
   <%= f.label :eatout %>
   <br>
-  <%= f.select :eatout, Restaurant.eatouts.keys.to_a %>
+  <%= f.select :eatout, Restaurant.eatouts.keys.to_a, :class => "custom-select custom-select-lg mb-3" %>
   <br>
 
   <%= f.label :image %>
   <br>
-  <%= f.text_field :image %>
+  <%= f.text_field :image, :class => "form-control mx-sm-3"  %>
   <br>
 
-  <%= f.submit 'Submit' %>
+  <%= f.submit 'Submit', :class => "btn btn-primary" %>
 
   <% end %>

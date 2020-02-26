@@ -1,4 +1,8 @@
-<h2>New Company Account</h2>
+<p class="h5 mt-3 mb-4 text-center">
+   Create your free Team Hangry account
+</p>
+
+ <div class="signup-form">
 
 <% if @user.errors.any? %>
 <p>Please correct the following errors:</p>
@@ -12,3 +16,5 @@
   <% end %>
 
 <%= render partial: 'form' %>
+
+</div>

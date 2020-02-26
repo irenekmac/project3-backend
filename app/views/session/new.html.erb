@@ -1,45 +1,35 @@
-<h2>
-  <div class="login-h2">
-  Login to your account
-  </div>
-</h2>
+<div class="login-form">
 
-<!-- Print out any message for the user -->
-<% if flash[:error] %>
-  <strong>
-    <%= flash[:error] %>
-  </strong>
-  <br>
-  <br>
-<% end %>
-<div class="login-form-container">
+<%= form_tag login_path, class: 'border border-light p-5' do %>
 
-<div class="login-form-box">
+  <p class="h4 mb-4 text-center">Log In</p>
 
-
-<%= form_tag login_path do %>
+  <% if flash[:error].present? %>
+        <p class="alert alert-danger p-2 text-center"><%= flash[:error] %></p>
+      <% end %>
 
   <div class="login-form-email">
   <%= label_tag :email %>
   <br>
-  <%= email_field_tag :email, "minters@test.co"  %>
+  <%= email_field_tag :email, "minters@test.co", :class => "form-control mb-4" %>
   </div>
   <br>
 
   <div class="login-form-pw">
   <%= label_tag :password %>
   <br>
-  <%= password_field_tag :password, 'chicken' %>
+  <%= password_field_tag :password, 'chicken', :class => "form-control mb-4", :placeholder => 'Password' %>
   </div>
   <br>
 
-  <div class="login-form-submit">
-  <%= submit_tag 'Login' %>
-  </div>
+  <%= submit_tag 'Login', :class => "btn btn-info btn-block my-4" %>
+
+  <p class="text-center">
+        Don't have an account?
+        <%= link_to "Sign Up", new_user_path %>
+      </p>
 
 <% end %>
 
-</div>
 
-
-</div> <!-- blah -->
+</div> <!-- class="login-form" -->
