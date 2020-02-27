@@ -20,10 +20,12 @@ class RestaurantsController < ApplicationController
 
   def index
     headers['Access-Control-Allow-Origin'] = '*'
-    # @resto = Restaurant.all
+    @resto = Restaurant.all
+
+    render json: @resto
 
     # Current logged-in user can see team suggested orders
-    @resto = Restaurant.where user_id: @current_user.id
+    # @resto = Restaurant.where user_id: @current_user.id
   end
 
   def show
